@@ -9,8 +9,29 @@
 </head>
 <body>
     <h2>Convert from USD TO:</h2>
-    <button class="showCurrencyConv">GBP</button>
-    <button class="showCurrencyConv">SEK</button>
+    <div>
+        <div>
+            <input type="radio" id="SEK" name="radioButtons" value="SEK">
+            <label for="SEK"> SEK</label><br>
+        </div>
+        <div>
+            <input type="radio" id="GBP" name="radioButtons" value="GBP">
+            <label for="GBP"> GBP</label><br>
+        </div>
+        <div>
+            <input type="radio" id="NOK" name="radioButtons" value="NOK">
+            <label for="NOK"> NOK</label><br> 
+        </div>
+    </div>
+    <div>
+        <input id="amountInput" type="text">
+        <button id="convertButton">Convert</button>
+        <button id="clearButton">Clear</button>
+    </div>
+
+
+    <!-- <button class="showCurrencyConv">GBP</button>
+    <button class="showCurrencyConv">SEK</button> -->
 
 
 
