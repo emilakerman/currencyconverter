@@ -1,12 +1,9 @@
-const showCurrencyConvButtons = document.getElementsByClassName('showCurrencyConv');
 
 const host = 'api.frankfurter.app';
 
 let selectedReturnCurrency = '';
 let amountInputValue = 0;
 
-
-///
 let amountInput = document.getElementById('amountInput');
 const convertButton = document.getElementById('convertButton');
 const clearButton = document.getElementById('clearButton');
