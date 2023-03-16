@@ -1,0 +1,22 @@
+body {
+
+}
+.currencyElement {
+
+}
+#currencyList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #currencyList h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    height: 100px;
+  }
