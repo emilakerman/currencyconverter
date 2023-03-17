@@ -66,6 +66,7 @@ const fetchandDisplay = (selectedReturnCurrency, amountInputValue) => {
 window.onload = function() {
     // createCurrencyElements();
     populateList();
+    //returnedLastWeekValue();
   };
 
 const createCurrencyElements = () => {
@@ -104,8 +105,8 @@ const populateList = () => {
                 currencyList.appendChild(currencyElement);
                 currencyList.appendChild(valueElement);
                 currencyList.appendChild(dateElement); 
-                //currencyList.appendChild(returnLastWeekValue()); 
-                //currencyList.appendChild.innerHTML(returnLastWeekValue());             
+
+                //currencyList.appendChild(returnedLastWeekValue()); 
             }
     });
 
@@ -119,7 +120,7 @@ function getWeekAgoDate() {
     return oneWeekAgo;
   }
 
-  const returnLastWeekValue = () => {
+  const returnedLastWeekValue = () => {
     fetch(urlOneWeekAgo)
     .then(resp => resp.json())
     .then((data) => {
@@ -127,11 +128,9 @@ function getWeekAgoDate() {
             let weekChange = document.createElement('h4');
             weekChange.innerHTML = (`${data.rates[key]}`);
             currencyList.appendChild(weekChange);
+            console.log(weekChange);
             return weekChange;
 
-            //lastWeekValue = data.rates[key];
-            //console.log(lastWeekValue);
-            //return lastWeekValue;
         }
     });
   }
