@@ -91,9 +91,9 @@ const populateList = () => {
     .then(resp => resp.json())
     .then((data) => { 
             for (const key in data.rates) {
-                let currencyElement = document.createElement('h4');
-                let valueElement = document.createElement('h4');
-                let dateElement = document.createElement('h4');
+                let currencyElement = document.createElement('li');
+                let valueElement = document.createElement('li');
+                let dateElement = document.createElement('li');
 
                 currencyElement.className = 'currencyElement';
                 valueElement.className = 'valueElement';
