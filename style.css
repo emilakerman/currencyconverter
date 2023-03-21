@@ -54,17 +54,20 @@ body {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
+    background: linear-gradient(to bottom, #333333, #1a1a1a);
 }
 .currencyElement {
 
 }
 #currencyList {
+    background: linear-gradient(to bottom, #333333, #1a1a1a);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
     font-family: "Courier New", Courier, monospace;
     font-size: 12px;
     line-height: 1.5;
@@ -84,19 +87,15 @@ body {
     font-weight: bold;
     background-color: #008000;
   }
-#currencyPairsHeader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
 #columnHeaders {
+    background: #333333;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     flex-wrap: wrap;
     list-style: none;
-    padding: 0;
-    margin: 0;
     font-family: "Courier New", Courier, monospace;
     font-size: 12px;
     line-height: 1.5;
@@ -110,4 +109,18 @@ body {
     margin-bottom: 10px;
     background-color: #3e3d3d;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+#convertStaticUsd {
+    background-color: #fdcb3e;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#convertStaticUsd input {
+    margin-top: 10px;
+}
+#convertStaticUsd h2 {
+    margin-bottom: 0;
 }

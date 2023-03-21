@@ -23,27 +23,28 @@
             <input type="" id="rightRow" placeholder="To"/>
         </div>
     </div>
-    <h2>Convert from USD to:</h2>
-    <div>
+    <div id="convertStaticUsd">
+        <h2>Convert from USD to:</h2>
         <div>
-            <input type="radio" id="SEK" name="radioButtons" value="SEK">
-            <label for="SEK"> SEK</label><br>
+            <div>
+                <input type="radio" id="SEK" name="radioButtons" value="SEK">
+                <label for="SEK"> SEK</label><br>
+            </div>
+            <div>
+                <input type="radio" id="GBP" name="radioButtons" value="GBP">
+                <label for="GBP"> GBP</label><br>
+            </div>
+            <div>
+                <input type="radio" id="NOK" name="radioButtons" value="NOK">
+                <label for="NOK"> NOK</label><br> 
+            </div>
         </div>
         <div>
-            <input type="radio" id="GBP" name="radioButtons" value="GBP">
-            <label for="GBP"> GBP</label><br>
-        </div>
-        <div>
-            <input type="radio" id="NOK" name="radioButtons" value="NOK">
-            <label for="NOK"> NOK</label><br> 
+            <input id="amountInput" type="text" placeholder="Input USD">
+            <button id="convertButton">Convert</button>
+            <button id="clearButton">Clear</button>
         </div>
     </div>
-    <div>
-        <input id="amountInput" type="text" placeholder="Input USD">
-        <button id="convertButton">Convert</button>
-        <button id="clearButton">Clear</button>
-    </div>
-    <h2 id="currencyPairsHeader">Currency Pairs</h2>
     <div id="columnHeaders">
         <li>Pair</li>
         <li>Value</li>
