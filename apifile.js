@@ -85,8 +85,6 @@ const createCurrencyElements = () => {
     return currencyElement;
 } 
 const populateList = () => {
-
-
     fetch(latestFromUSD)
     .then(resp => resp.json())
     .then((data) => { 
@@ -134,3 +132,24 @@ function getWeekAgoDate() {
         }
     });
   }
+
+// //top input stuff
+const left_input = document.getElementById('leftRow');
+const right_output = document.getElementById('rightRow');
+
+
+left_input.addEventListener("input", () => {
+    if (left_input.value != '') {
+        fetchandDisplay2(left_input.value);
+    } else {
+        right_output.value = '';
+    }
+});
+
+const fetchandDisplay2 = (inputValue) => {
+    fetch(`https://${host}/latest?amount=${inputValue}&from=USD&to=SEK`)
+      .then(resp => resp.json())
+      .then((data) => {
+        right_output.value = data.rates.SEK;
+      });
+}
