@@ -133,23 +133,115 @@ function getWeekAgoDate() {
     });
   }
 
-// //top input stuff
+//top input stuff
 const left_input = document.getElementById('leftRow');
 const right_output = document.getElementById('rightRow');
-
+const returnSEK = document.getElementById('option1');
+const returnGBP = document.getElementById('option2');
+const returnNOK = document.getElementById('option3');
+const returnJPY = document.getElementById('option4');
+const returnAUD = document.getElementById('option5');
+const returnEUR = document.getElementById('option6');
+const returnINR = document.getElementById('option7');
+const returnHKD = document.getElementById('option8');
 
 left_input.addEventListener("input", () => {
     if (left_input.value != '') {
-        fetchandDisplay2(left_input.value);
+        if (returnSEK.checked) {
+            selectedReturnCurrency = 'SEK';
+        }
+        if (returnGBP.checked) {
+            selectedReturnCurrency = 'GBP';
+        }
+        if (returnNOK.checked) {
+            selectedReturnCurrency = 'NOK';
+        }
+        if (returnJPY.checked) {
+            selectedReturnCurrency = 'JPY';
+        }
+        if (returnAUD.checked) {
+            selectedReturnCurrency = 'AUD';
+        }
+        if (returnEUR.checked) {
+            selectedReturnCurrency = 'EUR';
+        }
+        if (returnINR.checked) {
+            selectedReturnCurrency = 'INR';
+        }
+        if (returnHKD.checked) {
+            selectedReturnCurrency = 'HKD';
+        }
+        fetchandDisplay2(left_input.value, selectedReturnCurrency);
     } else {
         right_output.value = '';
     }
 });
 
-const fetchandDisplay2 = (inputValue) => {
-    fetch(`https://${host}/latest?amount=${inputValue}&from=USD&to=SEK`)
+const fetchandDisplay2 = (inputValue, selectedReturnCurrency) => {
+    fetch(`https://${host}/latest?amount=${inputValue}&from=USD&to=${selectedReturnCurrency}`)
       .then(resp => resp.json())
       .then((data) => {
-        right_output.value = data.rates.SEK;
+        switch (selectedReturnCurrency) {
+        case 'SEK':
+            right_output.value = `${data.rates.SEK} SEK`;
+            break;
+        case 'GBP':
+            right_output.value = `${data.rates.GBP} GBP`;
+            break;
+        case 'NOK':
+            right_output.value = `${data.rates.NOK} NOK`;
+            break;
+        case 'JPY':
+            right_output.value = `${data.rates.JPY} JYP`;
+            break;
+        case 'AUD':
+            right_output.value = `${data.rates.AUD} AUD`;
+            break;
+        case 'EUR':
+            right_output.value = `${data.rates.EUR} EUR`;
+            break;
+        case 'INR':
+            right_output.value = `${data.rates.INR} INR`;
+            break;
+        case 'HKD':
+            right_output.value = `${data.rates.HKD} HKD`;
+            break;
+        default:
+            console.log(`woops`);
+        }
       });
+}
+let topRadioButtons = document.getElementsByName("topRadioButtons");
+for(radio in topRadioButtons) {
+    topRadioButtons[radio].onclick = () => {
+        if (left_input.value != '') {
+            if (returnSEK.checked) {
+                selectedReturnCurrency = 'SEK';
+            }
+            if (returnGBP.checked) {
+                selectedReturnCurrency = 'GBP';
+            }
+            if (returnNOK.checked) {
+                selectedReturnCurrency = 'NOK';
+            }
+            if (returnJPY.checked) {
+                selectedReturnCurrency = 'JPY';
+            }
+            if (returnAUD.checked) {
+                selectedReturnCurrency = 'AUD';
+            }
+            if (returnEUR.checked) {
+                selectedReturnCurrency = 'EUR';
+            }
+            if (returnINR.checked) {
+                selectedReturnCurrency = 'INR';
+            }
+            if (returnHKD.checked) {
+                selectedReturnCurrency = 'HKD';
+            }
+            fetchandDisplay2(left_input.value, selectedReturnCurrency);
+        } else {
+            right_output.value = '';
+        }
+    }
 }
