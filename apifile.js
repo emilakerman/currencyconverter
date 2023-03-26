@@ -6,13 +6,30 @@ let lastWeekValue = '';
 let currencyList = document.getElementById('currencyList');
 let latestFromUSD = 'https://api.frankfurter.app/latest?from=USD';
 let selectedReturnCurrency = '';
+let quoteH3 = document.getElementById('quote');
+let arrayString = [];
+
+
+//random advice - https://api.adviceslip.com/advice
+let adviceUrl = 'https://api.adviceslip.com/advice/search/a';
+
 
 ///
 window.onload = function() {
     // createCurrencyElements();
     populateList();
+    fetchAdvice();
     //returnedLastWeekValue();
   };
+
+const fetchAdvice = () => {
+    fetch(adviceUrl)
+    .then(resp => resp.json())
+    .then((data) => {
+        const stuff = Math.floor(Math.random() * data.slips.length);
+        quoteH3.innerHTML = (`${data.slips[stuff].advice}`);
+    });
+}
 
 const createCurrencyElements = () => {
     fetch(`https://${host}/latest?amount=1&from=USD&to=GBP`)
