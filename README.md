@@ -5,3 +5,5 @@ A currency converter with API data in pure javascript/css/html. Also added this 
 This currency converter is actually really fast and will actually help alot of people convert various currencies (faster than google searches).
 
 ![image](https://i.imgur.com/J0gGRaX.png)
+
+![image2](https://i.imgur.com/BTvA8Pk.png)
